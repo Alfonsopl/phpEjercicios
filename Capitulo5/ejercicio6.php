@@ -7,8 +7,8 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ejercicio 2</title>
         <link rel="stylesheet"	 type="text/css" href="estilo.css"/>
+        <title>Ejercicio 6</title>
     </head>
     <body>
         <?php
@@ -18,9 +18,9 @@ and open the template in the editor.
         if ($introducido > 0) {
             $numeroTexto =  $numeroTexto. " ". $numero;
         }
-        if ($introducido < 10){ 
+        if ($introducido < 8){ 
             echo "<p>Introduzca el numero ", ($introducido + 1) , ".</p> ";
-            echo "<form action='ejercicio2.php' method='post'>";
+            echo "<form action='ejercicio6.php' method='post'>";
             echo "<input type='number'  name='numero' autofocus>";
             echo "<input type='hidden' name='introducido' value='" , ($introducido + 1), "'>"; 
             echo "<input type='hidden' name='numeroTexto' value='" , ($numeroTexto), "'>"; 
@@ -29,20 +29,16 @@ and open the template in the editor.
             //print_r(get_defined_vars());
         }
             
-        if ($introducido >= 10){
+        if ($introducido >= 8){
             echo "Los numeros introducidos son:";
             $numeroTexto = substr($numeroTexto, 1, strlen($numeroTexto) - 1);
             $array = explode(" ", $numeroTexto);
-            $max = max($array);
-            $min = min($array); 
             echo "<br>";
             for ($i=0; $i<10; $i++) {
-                echo "<br>", $array[$i] , " ";
-                if ($array[$i] == $max) {
-                    echo " Máximo del array";
-                }
-                if ($array[$i] == $min) {
-                    echo " Mínimo del array";
+                if (($array[$i]%2) == 0) {
+                    echo "<spam style='color:red;'>" . $array[$i] . "</spam><br>";
+                } else {
+                    echo "<spam style='color:green;'>" . $array[$i] . "</spam><br>";
                 }
             }
            // print_r(get_defined_vars());

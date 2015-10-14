@@ -7,8 +7,8 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ejercicio 2</title>
         <link rel="stylesheet"	 type="text/css" href="estilo.css"/>
+        <title></title>
     </head>
     <body>
         <?php
@@ -20,7 +20,7 @@ and open the template in the editor.
         }
         if ($introducido < 10){ 
             echo "<p>Introduzca el numero ", ($introducido + 1) , ".</p> ";
-            echo "<form action='ejercicio2.php' method='post'>";
+            echo "<form action='ejercicio8.php' method='post'>";
             echo "<input type='number'  name='numero' autofocus>";
             echo "<input type='hidden' name='introducido' value='" , ($introducido + 1), "'>"; 
             echo "<input type='hidden' name='numeroTexto' value='" , ($numeroTexto), "'>"; 
@@ -30,23 +30,41 @@ and open the template in the editor.
         }
             
         if ($introducido >= 10){
-            echo "Los numeros introducidos son:";
             $numeroTexto = substr($numeroTexto, 1, strlen($numeroTexto) - 1);
-            $array = explode(" ", $numeroTexto);
-            $max = max($array);
-            $min = min($array); 
-            echo "<br>";
-            for ($i=0; $i<10; $i++) {
-                echo "<br>", $array[$i] , " ";
-                if ($array[$i] == $max) {
-                    echo " Máximo del array";
-                }
-                if ($array[$i] == $min) {
-                    echo " Mínimo del array";
+            $array = explode(" ", $numeroTexto); 
+            $indice = 0;
+            for ($i=0; $i<10; $i++){          
+                if (esPrimo($array[$i])) {
+                    $aux[$indice] = $array[$i];
+                    $indice++;
                 }
             }
+            for ($i=0; $i<10; $i++){
+                if (!esPrimo($array[$i])) {
+                    $aux[$indice] = $array[$i];
+                    $indice++;
+                }
+            }
+            echo "<br>Array original:<br>";
+            foreach ($array as $numero) {
+            echo "$numero, ";
+            }
+            echo "<br>Array primos primero:<br>";
+            foreach ($aux as $numero2) {
+            echo "$numero2, ";
+            }
            // print_r(get_defined_vars());
-        }    
+        }
+        //Defino la funcion esPrimo que he utilizado durante todo el programa
+        function esPrimo($entrada){
+            $esPrimo = true;    
+            for ($i = 2; $i < $entrada; $i++) {
+                if (($entrada % $i) == 0) {
+                    $esPrimo = false;
+                }
+            }
+            return $esPrimo;
+        }
         ?>
     </body>
 </html>

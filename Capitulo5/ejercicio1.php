@@ -12,20 +12,24 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        $numero = new SplFixedArray(20);  /// No funciona al inicialicar arrays.
+        $cuadrado = new SplFixedArray(20);
+        $cubo = new SplFixedArray(20);
         for ($i=0; $i<20; $i++){
             $numero[$i] = rand(0,100);
         }
         for ($i=0; $i<20; $i++){
-            $cuadrado[$i] = $numero[$i] * $numero[$i];
+            //$cuadrado[$i] = $numero[$i] * $numero[$i];
+            $cuadrado[$i] = pow($numero[$i], 2);
         }
         for ($i=0; $i<20; $i++){
-            $cubo[$i] = $cuadrado[$i] * $numero[$i];
-        }
-        
+            $cubo[$i] = pow($numero[$i], 3);
+         }
+        echo "<table><tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>";
         for ($i=0; $i<20; $i++){
-            echo $numero[$i], " " , $cuadrado[$i], " " , $cubo[$i] , "<br>";
+            echo  "<tr><td>" , $numero[$i], "</td><td> " , $cuadrado[$i], "</td><td> " , $cubo[$i] , "</td></tr>";
         }
-        
+        echo "</table>";
         ?>
     </body>
 </html>
