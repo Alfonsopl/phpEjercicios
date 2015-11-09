@@ -7,11 +7,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ejercicio 12</title>
-        <link rel="stylesheet"	 type="text/css" href="estilo.css"/>
+        <title>Prueba</title>
     </head>
-    <body>
-        <body>
+           <body>
         <?php
         //////////////////////////////////////DECLARACION DE VARIABLES/////////////////////////////////////////////
             //////////////////// ARRAY ASOCIATIVO DICCIONARIO/////////////////////
@@ -21,6 +19,11 @@ and open the template in the editor.
             'rojo' => "red", 'azul' => "blue", 'caballo' => "horse", 'profesor' => "teacher", 'libro' => "book",
             'arco' => "bow", 'cesta' => "basket", 'navidad' => "christmast", 'carne' => "meat", 'pelicula' => "movie" );
             
+            foreach($_COOKIE as $nombre => $valor){
+                if (($nombre!="color")&&($nombre!="PHPSESSID")){
+                    $diccionario[$valor] = $nombre ;
+                }
+            }
             //////////////// ARRAY CON INDICES NUMERICOS Y PALABRAS EN ESPANOL//////
             foreach($diccionario as $clave => $valor){
                 $palabrasEspanol[]= $clave;
@@ -30,7 +33,7 @@ and open the template in the editor.
                 $palabrasIngles[]= $valor;
             }
             //////VAFRIABLE ALEATORIA PARA ELEGIR PALABRA EN ESPAÑOL
-            $palabraAleatoria = rand(0,19);
+            $palabraAleatoria = rand(0,(count($diccionario)));
             /////// NUMERO DE PALABRAS INTRODUCIDAS, SI NO HA SIDO ENVIADA SERA = A 0//////////
             $introducido = (!isset($_POST['introducido']))? 0 : $_POST['introducido'];
             /////// PUNTUACION TOTAL, SI NO HA SIDO ENVIADA SERA = A 0//////////
@@ -51,7 +54,7 @@ and open the template in the editor.
             if ($introducido < 5) {
                 echo "<p>Palabra numero ", ($introducido + 1) , ".</p> ";
                 echo "<p>Introduzca la traduccion de la palabra $palabrasIngles[$palabraAleatoria] </p>";
-                echo "<form action='ejercicio12.php' method='post'>";
+                echo "<form action='#' method='post'>";
                 echo "<input type='name' name='palabra' autofocus>";
                 echo "<input type='hidden' name='introducido' value='" , ($introducido + 1), "'>";
                 echo "<input type='hidden' name='aleatorio' value='" , $palabraAleatoria , "'>";  
@@ -60,10 +63,11 @@ and open the template in the editor.
                 echo "</form>";
             }
     ////////////////// CUANDO ACABO LAS 5 PALBRAS EL PROGRAMA ME MUESTRA LA PUNTUACION///////////////////
-            if ($introducido == 5)
-                echo "Ha acertado $puntuacion palabras."
-            
+            if ($introducido == 5) {
+                echo "Ha acertado $puntuacion palabras.";
+            }
         ?>
-    </body>
+               <hr><br><br>
+               <a href="ejercicio8.php">Volver</a>
     </body>
 </html>

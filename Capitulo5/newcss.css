@@ -1,0 +1,150 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-may-2015, 10:42:13
+    Author     : Alfonso
+*/
+
+table{
+   border: 1px solid rgb(106, 114, 130);
+   width: 100%;
+   max-width: 960px;
+   margin: 40px auto;
+   box-shadow: 10px 10px 5px rgb(106, 114, 130);
+}
+td{
+  width: 120px;
+}
+td {
+border: 1px solid rgb(106, 114, 130);;
+}
+
+tr.x0  td.y1 {
+  background-color: black
+}
+
+tr.x0  td.y3 {
+  background-color: black
+}
+
+tr.x0  td.y5 {
+  background-color: black
+}
+
+tr.x0  td.y7 {
+  background-color: black
+}
+
+tr.x2  td.y1 {
+  background-color: black
+}
+
+tr.x2  td.y3 {
+  background-color: black
+}
+
+tr.x2  td.y5 {
+  background-color: black
+}
+
+tr.x2  td.y7 {
+  background-color: black
+}
+
+tr.x4  td.y1 {
+  background-color: black
+}
+
+tr.x4  td.y3 {
+  background-color: black
+}
+
+tr.x4  td.y5 {
+  background-color: black
+}
+
+tr.x4 td.y7 {
+  background-color: black
+}
+
+tr.x6  td.y1 {
+  background-color: black
+}
+
+tr.x6  td.y3 {
+  background-color: black
+}
+
+tr.x6  td.y5 {
+  background-color: black
+}
+
+tr.x6  td.y7 {
+  background-color: black
+}
+
+tr.x1  td.y0 {
+  background-color: black
+}
+
+tr.x1  td.y2 {
+  background-color: black
+}
+
+tr.x1  td.y4 {
+  background-color: black
+}
+
+tr.x1  td.y6 {
+  background-color: black
+}
+tr.x3  td.y0 {
+  background-color: black
+}
+
+tr.x3  td.y2 {
+  background-color: black
+}
+
+tr.x3 td.y4 {
+  background-color: black
+}
+
+tr.x3  td.y6 {
+  background-color: black
+}
+
+tr.x5  td.y0 {
+  background-color: black
+}
+
+tr.x5  td.y2 {
+  background-color: black
+}
+
+tr.x5  td.y4 {
+  background-color: black
+}
+
+tr.x5  td.y6 {
+  background-color: black
+}
+
+tr.x7  td.y0 {
+  background-color: black
+}
+
+tr.x7  td.y2 {
+  background-color: black
+}
+
+tr.x7  td.y4 {
+  background-color: black
+}
+
+tr.x7  td.y6 {
+  background-color: black
+}

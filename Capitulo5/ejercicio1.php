@@ -8,9 +8,10 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Ejercicio 1</title>
-        <link rel="stylesheet"	 type="text/css" href="estilo.css"/>
+        <link rel="stylesheet"	 type="text/css" href="bootstrap.css"/>
     </head>
     <body>
+        <div class="container">
         <?php
         $numero = new SplFixedArray(20);  /// No funciona al inicialicar arrays.
         $cuadrado = new SplFixedArray(20);
@@ -25,11 +26,12 @@ and open the template in the editor.
         for ($i=0; $i<20; $i++){
             $cubo[$i] = pow($numero[$i], 3);
          }
-        echo "<table><tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>";
+        echo "<table class='table table-bordered'><tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>";
         for ($i=0; $i<20; $i++){
             echo  "<tr><td>" , $numero[$i], "</td><td> " , $cuadrado[$i], "</td><td> " , $cubo[$i] , "</td></tr>";
         }
         echo "</table>";
         ?>
+        </div>
     </body>
 </html>
